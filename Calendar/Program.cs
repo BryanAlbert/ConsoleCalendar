@@ -13,9 +13,8 @@ namespace Calendar
 			DateTime month = ParseCommandLine(args);
 			string title = month.ToString("MMMM yyyy");
 			Console.WriteLine("{0}{1}", new string(' ', (21 - title.Length) / 2), title);
-			DateTime first = new DateTime(month.Year, month.Month, 1);
-			int day = 1 - (int) first.DayOfWeek;
-			while (day < DateTime.DaysInMonth(month.Year, month.Month))
+			int day = 1 - (int) new DateTime(month.Year, month.Month, 1).DayOfWeek;
+			while (day <= DateTime.DaysInMonth(month.Year, month.Month))
 			{
 				string week = "";
 				for (int weekDay = 0; weekDay < 7 && day <= DateTime.DaysInMonth(month.Year, month.Month); weekDay++, day++)
@@ -31,7 +30,7 @@ namespace Calendar
 			int month;
 			if (!int.TryParse(args[0], out month))
 				return DateTime.Now;
-			return new DateTime(DateTime.Now.Year, month, 1);
+			return new DateTime(DateTime.Now.Year, Math.Min(12, Math.Max(month, 1)), 1);
 		}
 	}
 }
