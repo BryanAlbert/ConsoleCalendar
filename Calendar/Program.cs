@@ -22,7 +22,6 @@ namespace Calendar
 					week += day > 0 ? string.Format("{0,2} ", day) : new string(' ', 3);
 				Console.WriteLine(week);
 			}
-			Console.ReadKey();
 		}
 
 		private static DateTime ParseCommandLine(string[] args)
