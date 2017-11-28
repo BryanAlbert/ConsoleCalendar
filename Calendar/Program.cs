@@ -10,7 +10,7 @@ namespace Calendar
 	{
 		static void Main(string[] args)
 		{
-			DateTime month = DateTime.Now;
+			DateTime month = ParseCommandLine(args);
 			string title = month.ToString("MMMM yyyy");
 			Console.WriteLine("{0}{1}", new string(' ', (21 - title.Length) / 2), title);
 			DateTime first = new DateTime(month.Year, month.Month, 1);
@@ -23,6 +23,16 @@ namespace Calendar
 				Console.WriteLine(week);
 			}
 			Console.ReadKey();
+		}
+
+		private static DateTime ParseCommandLine(string[] args)
+		{
+			if (args.Length == 0)
+				return DateTime.Now;
+			int month;
+			if (!int.TryParse(args[0], out month))
+				return DateTime.Now;
+			return new DateTime(DateTime.Now.Year, month, 1);
 		}
 	}
 }
