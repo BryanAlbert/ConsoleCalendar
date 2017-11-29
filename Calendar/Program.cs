@@ -8,6 +8,7 @@ using System.Threading.Tasks;
  * TODO: 
  * Add year parameter, defaulting to current year
  * Select the nearest month, i.e. if the curren tmonth is November 2017 and 1 is specified on the command line, show January 2018. 
+ * First try to parse arguments as a DateTime (assemble a string as necessary), failing that, assume month, or month and year, as discussed.
  */
 
 namespace Calendar
