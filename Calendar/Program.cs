@@ -33,12 +33,16 @@ namespace Calendar
 
 		private static DateTime ParseCommandLine(string[] args)
 		{
+			DateTime month;
 			if (args.Length == 0)
 				return DateTime.Now;
-			int month;
-			if (!int.TryParse(args[0], out month))
+			if (DateTime.TryParse(args[0], out month))
+				return month;
+
+			int monthNumber;
+			if (!int.TryParse(args[0], out monthNumber))
 				return DateTime.Now;
-			return new DateTime(DateTime.Now.Year, Math.Min(12, Math.Max(month, 1)), 1);
+			return new DateTime(DateTime.Now.Year, Math.Min(12, Math.Max(monthNumber, 1)), 1);
 		}
 	}
 }
