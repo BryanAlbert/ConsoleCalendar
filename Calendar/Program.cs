@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /*
  * TODO: 
@@ -14,6 +10,7 @@ using System.Threading.Tasks;
  *		-diff subtract two DateTimes, output in year, month, day
  *		-julian julian date 
  *		-add add two DateTimes
+ *		-color Use Yellow for today's date, shadow color for prefix and suffix dates (before the 1st and after the last day)
  */
 
 namespace Calendar
