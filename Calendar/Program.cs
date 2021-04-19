@@ -1,17 +1,5 @@
 ﻿using System;
 
-/*
- * TODO: 
- * Use Red for today's date, DarkGray for prefix and suffix dates (before the 1st and after the last day)
- * Add year parameter, defaulting to current year? 
- * Select the nearest month, i.e. if the curren tmonth is November 2017 and 1 is specified on the command line, show January 2018. 
- * First try to parse arguments as a DateTime (assemble a string as necessary), failing that, assume month, or month and year, as discussed.
- * Add command line switches:
- *		-year 2017 print a calendar for 2017, four columns, three rows
- *		-diff subtract two DateTimes, output in year, month, day
- *		-julian julian date 
- *		-add add two DateTimes
- */
 
 namespace Calendar
 {
